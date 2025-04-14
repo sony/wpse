@@ -1,0 +1,28 @@
+output_dir: /path/to/workspace
+
+model:
+  _target_: models_linear.LinearProbe
+  feature_extractor:
+    _target_: models_linear.CLIPWrapper
+    model_dir: /path/to/model/dir
+    out_type: before_proj
+  dim_feat: 768
+  dim_class: 1000
+
+
+dataset:
+  name: null
+  list:
+    - cifar10
+    - cifar100
+  transform:
+    interpolation: bicubic
+
+seed: 314
+gpu: 0
+
+workers: 4
+batch_size: 1024
+
+dist_url: null
+distributed: False

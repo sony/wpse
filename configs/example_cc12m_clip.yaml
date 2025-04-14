@@ -1,0 +1,43 @@
+defaults:
+  - dataset: example_cc12m
+  - model: clip_vit_b16
+  - criterion: clip_loss
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+  - _self_
+
+output_dir: checkpoints/examples/clip_vit_b16    # output directory
+resume: null                                     # path of a checkpoint.pt to resume from
+seed: 6174               # random seed
+workers: 8               # num_workers for DataLoader
+evaluate: false          # This should be false.
+
+start_epoch: 0      # This parameter will be rewritten if the training is resumed from a checkpoint.
+epochs: 35          # total epochs for pretraining
+warmup_epochs: 1    # the first epochs for warmup
+batch_size: 512     # batch-size per gpu
+eval_freq: 1        # evaluation frequency [epoch]
+#imagenet_valsplit: subset_train    # name of a val split of ImageNet for pretraining (default: val)
+
+lr: 5.e-4                # maximum learning rate in cosine lr scheduling
+lr_start: 1.0e-06        # initial learning rate for warmup
+lr_end: 1.0e-05          # last learning rate for cosine lr scheduling
+betas: [0.9, 0.98]       # betas for AdamW
+eps: 1.0e-8              # eps for AdamW
+wd: 0.5                  # weight decay
+update_freq: 1           # optimizer update frequency [iter] (i.e. gradient accumulation steps)
+
+disable_scaler: false    # when true, amp.GradScaler is disabled.
+amp_dtype: float16       # null or "float16" or "bfloat16"
+clip_grad: null          # when null, gradient clipping is disabled.
+
+print_freq: 100    # logging frequency [iter]
+mlflow: false      # when false, MLflow logging is disabled
+
+dist_url: null        # This will be filled automatically if you use torchrun
+dist_backend: null    # This will be filled automatically if you use torchrun
+world_size: 1         # This will be filled automatically if you use torchrun
+rank: 0               # This will be filled automatically if you use torchrun
+local_rank: 0         # This will be filled automatically if you use torchrun
+distributed: false    # This will be filled automatically if you use torchrun
+gpu: 0                # This will be filled automatically if you use torchrun

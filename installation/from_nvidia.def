@@ -1,0 +1,28 @@
+Bootstrap: docker
+From: nvidia/cuda:12.2.2-cudnn8-devel-ubuntu22.04
+
+%environment
+    export LC_ALL=C.UTF-8
+    export Lang=C.UTF-8
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+    apt update
+    apt install -y bash \
+        build-essential \
+        git \
+        git-lfs \
+        curl \
+        ca-certificates \
+        libsndfile1-dev \
+        libgl1 \
+        python3.10 \
+        python3-pip \
+        python3.10-venv
+    rm -rf /var/lib/apt/lists
+
+    python3 -m pip install --no-cache-dir --upgrade pip
+    python3 -m pip install --no-cache-dir install pillow timm==0.6.7 ftfy regex numpy pandas hydra-core mlflow tqdm
+    python3 -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+    python3 -m pip install datasets
+    python3 -m pip install --extra-index-url=https://pypi.nvidia.com cuml-cu12==24.8.*

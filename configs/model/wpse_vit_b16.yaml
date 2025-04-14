@@ -1,0 +1,18 @@
+_target_: models.CLIP_WPSE_VITB16
+ln_eps: 1.0e-6                        # eps for LayerNorms
+transformer_null_token_emb: sequel    # [NUL] token type for the text encoder
+weight_act:                           # activation for weights of weighted point sets
+  _target_: models.ScaledTanh
+  alpha: 100.0
+config_logit_scale:                   # configs for the trainable temperature parameter
+  activation:
+    _target_: models.LogitScaleIdentity
+  init:
+    type: scale
+    value: 14.285714
+  max:
+    type: scale
+    value: 100.0
+  min:
+    type: scale
+    value: 1.0

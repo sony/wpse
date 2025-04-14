@@ -1,0 +1,10 @@
+pillow
+timm==0.6.7
+ftfy
+regex
+numpy
+pandas
+hydra-core
+mlflow
+tqdm
+datasets

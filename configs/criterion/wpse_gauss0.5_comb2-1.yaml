@@ -1,0 +1,12 @@
+_target_: losses.CLIP_WPSE_Loss
+rff_trick:
+  _target_: losses.RFFFeaturesGaussian
+  embed_dim: 512
+  dim_out: 1024
+  sigma: 0.5
+  first_normalize: true
+  parallel: ${distributed}
+  eps: 1.0e-06
+comb_weights:
+  - 0.667
+  - 0.333

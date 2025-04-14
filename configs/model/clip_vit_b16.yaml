@@ -1,0 +1,2 @@
+_target_: models.CLIP_VITB16
+ln_eps: 1.0e-06    # eps for LayerNorms

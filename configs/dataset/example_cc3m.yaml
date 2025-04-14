@@ -1,0 +1,5 @@
+name: huggingface_dataset
+path: pixparse/cc3m-wds
+cache_dir: /path/to/huggingface/cache/directory
+transform:
+  interpolation: bicubic

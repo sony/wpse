@@ -1,0 +1,69 @@
+{
+    "cifar10": {
+        "path": "/path/to/torchvision/data/root",
+        "type": "special"
+    },
+    "cifar100": {
+        "path": "/path/to/torchvision/data/root",
+        "type": "special"
+    },
+    "imagenet": {
+        "path": "/path/to/dataset",
+        "type": "imagefolder",
+        "train": "train",
+        "test": "val"
+    },
+    "stl10": {
+        "path": "/path/to/torchvision/data/root",
+        "type": "special"
+    },
+    "food101": {
+        "path": "/path/to/dataset",
+        "type": "imagefolder",
+        "train": "train",
+        "test": "test"
+    },
+    "caltech101": {
+        "path": "/path/to/dataset",
+        "type": "imagefolder",
+        "train": "train",
+        "test": "test"
+    },
+    "cars": {
+        "path": "/path/to/dataset",
+        "type": "imagefolder",
+        "train": "train",
+        "test": "test"
+    },
+    "flowers": {
+        "path": "/path/to/torchvision/data/root",
+        "type": "special"
+    },
+    "sun397": {
+        "path": "/path/to/dataset",
+        "type": "filelist",
+        "train": "train",
+        "val": "val",
+        "test": "test"
+    },
+    "eurosat": {
+        "path": "/path/to/dataset",
+        "type": "imagefolder",
+        "train": "train",
+        "test": "val"
+    },
+    "dtd": {
+        "path": "/path/to/torchvision/data/root",
+        "type": "special"
+    },
+    "aircraft": {
+        "path": "/path/to/torchvision/data/root",
+        "type": "special"
+    },
+    "pets": {
+        "path": "/path/to/dataset",
+        "type": "imagefolder",
+        "train": "train",
+        "test": "test"
+    }
+}
