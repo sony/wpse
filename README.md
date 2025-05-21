@@ -1,4 +1,4 @@
-# Weighted Point Set Embedding for Multimodal Contrastive Learning Toward Optimal Similarity 
+# Weighted Point Set Embedding for Multimodal Contrastive Learning Toward Optimal Similarity (ICLR 2025 Spotlight)
 
 This repository houses the official implementation of the paper titled "Weighted Point Set Embedding for Multimodal Contrastive Learning Toward Optimal Similarity", which is presented at ICLR 2025.
 [[`OpenReview`](https://openreview.net/forum?id=uSz2K30RRd)]
